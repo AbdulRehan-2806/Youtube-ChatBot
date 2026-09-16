@@ -13,4 +13,4 @@ __pycache__/
 .DS_Store
 
 # Generated FAISS vector stores (one per video, regenerated as needed)
-faiss_index_*/
+faiss_indexes/

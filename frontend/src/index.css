@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #101314;
+  --color-surface: #181b1d;
+  --color-surface-2: #202426;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #ece8e1;
+  --color-text-muted: #9a958c;
+  --color-accent: #e8b34a;
+  --color-accent-2: #3a7d6e;
+  --color-danger: #d9776e;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* The scrubber: one deliberate, subject-specific motion moment --
+   a loading sweep in the spirit of a video player's progress bar. */
+.scrubber {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.scrubber-fill {
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: var(--color-accent);
+  animation: scrub 1.1s ease-in-out infinite;
+}
+
+@keyframes scrub {
+  0% {
+    left: -30%;
+  }
+  50% {
+    left: 60%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrubber-fill {
+    animation: none;
+    left: 0;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
