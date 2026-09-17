@@ -18,7 +18,7 @@ app = FastAPI()
 ## this API. Tighten this list once you know your frontend's real port.
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"http://(localhost|127\.0\.0\.1):\d+",
+    allow_origin_regex=r"http://(localhost|127\.0\.0\.1):\d+|https://.*\.vercel\.app",
     allow_methods=["*"],
     allow_headers=["*"],
 )
