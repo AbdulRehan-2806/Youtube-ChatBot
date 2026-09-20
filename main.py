@@ -75,6 +75,6 @@ def chat(request: ChatRequest):
     answer = answer_question(vector_store, request.question)
 
     return ChatResponse(answer=answer)
-
+##Commands to run on local machine
 ## Terminal 1(Backend) : uvicorn main:app --reload
 ## Terminal 2(Frontend) : npm run dev 
